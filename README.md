@@ -1,24 +1,59 @@
-# How to run a python file
-1. **create a python file vir + (the luncher)**
-2. **make the code**
-3. **run using python name_file.py or python3 namefile.py**
+Getting Started: Using JupyterLab in a Kubeflow Solution
 
-## for excutable
-1. **first file py line:**
+This guide provides best practices for running Python scripts and managing dependencies from a JupyterLab notebook within a Kubeflow environment. It's designed to help you efficiently set up your workspace and execute your code.
+
+1. Running a Python Script in the Terminal
+
+This is the most common way to execute your Python code.
+
+    Create your Python file (e.g., main.py) inside your persistent volume.
+
+    Open a new terminal from the JupyterLab interface. You can typically do this by clicking the "+" icon in the file browser and selecting "Terminal."
+
+    Navigate to the directory where your file is saved.
+
+    Execute the script using the following command:
+
+Bash
+
+python3 your_file_name.py
+
+    Note: Kubeflow notebooks come pre-configured with python3 as the standard interpreter.
+
+2. Making a Script Executable
+
+For more advanced use cases, you can make your Python script directly executable, just like a shell command.
+
+    Add a shebang line to the very top of your Python file. This line tells your system to use the python3 interpreter.
+
+Python
+
 #!/usr/bin/env python3
 
-2. **terminal:**
+    In the terminal, grant the file executable permissions using the chmod command.
 
-- lunch terminal (from the same folder of the file ex. for log-run.py 
-chmod +x log-run.py 
-./log-run.py
+Bash
 
+chmod +x your_file_name.py
 
-# how to run a command
-use the terminal
-<img title="run command" alt="Alt text" src="/terminal luncher.png">
+    Now, you can run the script directly from the terminal.
 
-# How to install reuiurment
-in the current folder of requiurment file
-1. **Lunch a terminal
-2. 2. ** run the command: pip install -r requirements.txt
+Bash
+
+./your_file_name.py
+
+Practice: Try this method by running the log_run.py script from the example repository.
+
+3. Installing Python Dependencies
+
+To ensure your code runs without errors, you'll need to install any required libraries listed in the requirements.txt file.
+
+    Open a terminal in the same directory where your requirements.txt file is located.
+
+    Run the following command to install all the dependencies:
+
+Bash
+
+pip install -r requirements.txt
+
+This command uses pip, Python's package installer, to read the list of libraries and install them into your JupyterLab environment.
