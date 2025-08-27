@@ -1,4 +1,4 @@
-# How to run a python fil
+# How to run a python file
 1. **create a python file vir + (the luncher)**
 2. **make the code**
 3. **run using python name_file.py or python3 namefile.py**
