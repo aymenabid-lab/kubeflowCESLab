@@ -65,6 +65,3 @@ pip install -r requirements.txt
 This command uses `pip`, Python's package installer, to read the list of libraries from the file and install them into your JupyterLab environment.
 
 ```
-
-Do you want me to also add a **section 4** on *using virtual environments or conda* inside Kubeflow JupyterLab, so dependencies don’t pollute the base environment?
-```
