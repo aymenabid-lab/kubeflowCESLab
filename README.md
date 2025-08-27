@@ -1,6 +1,3 @@
-Here’s a clean and well-formatted Markdown version of your guide (with consistent syntax highlighting and indentation):
-
-````markdown
 # Getting Started with JupyterLab in a Kubeflow Environment
 
 This guide provides a quick reference for running Python scripts and managing dependencies from a **JupyterLab notebook within a Kubeflow environment**.
