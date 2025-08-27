@@ -8,14 +8,17 @@ This guide provides a quick reference for running Python scripts and managing de
 
 The most common way to execute your Python code is by using the terminal.
 
-- **Create your Python file** (e.g., `main.py`) inside your persistent volume.  
-- Open a new **terminal** from the JupyterLab interface (click the **`+`** icon in the file browser).  
-- Navigate to the directory where your file is saved.  
-- Execute the script using the following command:
+1. **Create your Python file** (e.g., `main.py`) inside your persistent volume.  
+2. Open a new **terminal** from the JupyterLab interface (click the **`+`** icon in the file browser):  
+
+   ![Run Command](./terminal%20luncher.png "Open Terminal in JupyterLab")  
+
+3. Navigate to the directory where your file is saved.  
+4. Execute the script using the following command:
 
 ```bash
 python3 your_file_name.py
-````
+
 
 > **Note:** Kubeflow notebooks are pre-configured to use `python3` as the standard interpreter.
 
@@ -43,7 +46,8 @@ chmod +x your_file_name.py
 ./your_file_name.py
 ```
 
-💡 **Practice:** Try making the `log_run.py` script from the example repository executable and then run it.
+💡 **Practice:** Try making the [`log_run.py`](https://github.com/aymenabid-lab/kubeflowCESLab/blob/main/log_run.py) script from the example repository executable and then run it.
+
 
 ---
 
