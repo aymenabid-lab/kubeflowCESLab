@@ -1,59 +1,69 @@
-Getting Started: Using JupyterLab in a Kubeflow Solution
+Here’s a clean and well-formatted Markdown version of your guide (with consistent syntax highlighting and indentation):
 
-This guide provides best practices for running Python scripts and managing dependencies from a JupyterLab notebook within a Kubeflow environment. It's designed to help you efficiently set up your workspace and execute your code.
+````markdown
+# Getting Started with JupyterLab in a Kubeflow Environment
 
-1. Running a Python Script in the Terminal
+This guide provides a quick reference for running Python scripts and managing dependencies from a **JupyterLab notebook within a Kubeflow environment**.
 
-This is the most common way to execute your Python code.
+---
 
-    Create your Python file (e.g., main.py) inside your persistent volume.
+### 1. Running a Python Script
 
-    Open a new terminal from the JupyterLab interface. You can typically do this by clicking the "+" icon in the file browser and selecting "Terminal."
+The most common way to execute your Python code is by using the terminal.
 
-    Navigate to the directory where your file is saved.
+- **Create your Python file** (e.g., `main.py`) inside your persistent volume.  
+- Open a new **terminal** from the JupyterLab interface (click the **`+`** icon in the file browser).  
+- Navigate to the directory where your file is saved.  
+- Execute the script using the following command:
 
-    Execute the script using the following command:
-
-Bash
-
+```bash
 python3 your_file_name.py
+````
 
-    Note: Kubeflow notebooks come pre-configured with python3 as the standard interpreter.
+> **Note:** Kubeflow notebooks are pre-configured to use `python3` as the standard interpreter.
 
-2. Making a Script Executable
+---
 
-For more advanced use cases, you can make your Python script directly executable, just like a shell command.
+### 2. Making a Script Executable
 
-    Add a shebang line to the very top of your Python file. This line tells your system to use the python3 interpreter.
+For convenience, you can make your Python script directly executable, similar to a shell command.
 
-Python
+1. Add a **shebang line** to the very top of your Python file. This tells the system to use the `python3` interpreter:
 
+```python
 #!/usr/bin/env python3
+```
 
-    In the terminal, grant the file executable permissions using the chmod command.
+2. In the terminal, grant the file executable permissions:
 
-Bash
-
+```bash
 chmod +x your_file_name.py
+```
 
-    Now, you can run the script directly from the terminal.
+3. Now, you can run the script directly from the terminal by typing its path:
 
-Bash
-
+```bash
 ./your_file_name.py
+```
 
-Practice: Try this method by running the log_run.py script from the example repository.
+💡 **Practice:** Try making the `log_run.py` script from the example repository executable and then run it.
 
-3. Installing Python Dependencies
+---
 
-To ensure your code runs without errors, you'll need to install any required libraries listed in the requirements.txt file.
+### 3. Installing Python Dependencies
 
-    Open a terminal in the same directory where your requirements.txt file is located.
+To ensure your code runs correctly, you'll need to install any required libraries listed in the `requirements.txt` file.
 
-    Run the following command to install all the dependencies:
+1. Open a terminal in the same directory where your `requirements.txt` file is located.
+2. Run the following command to install all the dependencies:
 
-Bash
-
+```bash
 pip install -r requirements.txt
+```
 
-This command uses pip, Python's package installer, to read the list of libraries and install them into your JupyterLab environment.
+This command uses `pip`, Python's package installer, to read the list of libraries from the file and install them into your JupyterLab environment.
+
+```
+
+Do you want me to also add a **section 4** on *using virtual environments or conda* inside Kubeflow JupyterLab, so dependencies don’t pollute the base environment?
+```
