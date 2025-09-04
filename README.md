@@ -64,17 +64,18 @@ pip install -r requirements.txt
 
 This command uses `pip`, Python's package installer, to read the list of libraries from the file and install them into your JupyterLab environment.
 
-```
+
 
 
 # GiT use
-#Push error
+## Push error
 if it's
 ```
 ! [rejected] master -> master (non-fast-forward)
 
 error: failed to push some refs to 'https://github.com/
 ```
+
 or you are in this pahse
 ```
   GNU nano 6.2       /home/jovyan/.git/MERGE_MSG                
@@ -86,6 +87,7 @@ Merge remote-tracking branch 'refs/remotes/solution/master'
 #Lines starting with '#' will be ignored, and an empty message>
 #the commit.
 ```
+
 it's due to other remote push for other device or online
 ## Solution
 This is a **`non-fast-forward`** error, meaning your local branch is "behind" the remote branch. This happens when new commits have been pushed to the remote repository that you don't have locally. Git rejects your push to prevent you from overwriting this new work.
