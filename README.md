@@ -80,11 +80,11 @@ or you are in this pahse
   GNU nano 6.2       /home/jovyan/.git/MERGE_MSG                
 
 Merge remote-tracking branch 'refs/remotes/solution/master'
-# Please enter a commit message to explain why this merge is ne>
-# especially if it merges an updated upstream into a topic bran>
-#
-# Lines starting with '#' will be ignored, and an empty message>
-# the commit.
+#Please enter a commit message to explain why this merge is ne>
+#especially if it merges an updated upstream into a topic bran>
+#...
+#Lines starting with '#' will be ignored, and an empty message>
+#the commit.
 ```
 it's due to other remote push for other device or online
 ## Solution
