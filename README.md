@@ -138,3 +138,74 @@ To use a slightly safer version:
 `git push --force-with-lease`
 
 This will only force the push if the remote branch hasn't been updated since you last fetched it. This prevents you from accidentally overwriting someone else's work.
+
+
+
+# Storage Management
+Due to few memroy avaliability, this is some recommandations:
+The message you’re seeing:
+
+```
+/dev/longhorn/pvc-2d983a61-16d4-41fd-9e00-cdbfa3dadb4b   20G   20G     0 100% /home/jovyan
+```
+
+means that your persistent volume claim (PVC) from **Longhorn** is completely full — it’s a 20 GB disk mounted at `/home/jovyan` and it has no free space left. This is why things may crash or fail.
+
+---
+
+### Steps to clean up space (safe cache/log cleanup)
+
+Run these inside the container/pod:
+
+#### 1. Remove Python and Jupyter caches
+
+```bash
+rm -rf ~/.cache/*
+rm -rf ~/.local/share/jupyter/runtime/*
+rm -rf ~/.local/share/jupyter/lab/staging/*
+```
+
+#### 2. Clean conda or pip caches (if using conda-based image like Jupyter)
+
+```bash
+conda clean -a -y   # removes tarballs, pkg cache, logs
+pip cache purge
+```
+
+#### 3. Remove notebook checkpoints
+
+```bash
+find /home/jovyan -type d -name ".ipynb_checkpoints" -exec rm -rf {} +
+```
+
+#### 4. Remove temporary files
+
+```bash
+rm -rf /tmp/*
+```
+
+#### 5. Clean logs
+
+```bash
+rm -rf ~/.jupyter/logs/*
+```
+
+---
+
+### 6. Check what’s taking space
+
+To identify big files/folders:
+
+```bash
+du -h /home/jovyan | sort -hr | head -20
+```
+
+This will show you the top 20 largest directories/files.
+
+---
+
+### 7. If still full
+
+* You may need to **delete old output files, large datasets, or model checkpoints** that are no longer needed.
+* If this PVC is too small for your workloads, consider **resizing the Longhorn volume** from your cluster’s storage settings.
+
